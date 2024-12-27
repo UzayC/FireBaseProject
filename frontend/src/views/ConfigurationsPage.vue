@@ -69,6 +69,7 @@
 <script>
 import { getAuth } from "firebase/auth";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
+import api from "@/services/api";
 
 export default {
   data() {
@@ -83,6 +84,18 @@ export default {
       },
     };
   },
+  mounted() {
+    api
+      .get("/configurations")
+      .then((response) => {
+        this.configurations = response.data;
+        console.log("Configurations:", this.configurations);
+      })
+      .catch((error) => {
+        console.error("Error fetching configurations:", error);
+      });
+  },
+
   async created() {
     try {
       const db = getFirestore();

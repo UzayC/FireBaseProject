@@ -27,6 +27,7 @@
 
 <script>
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import api from "@/services/api";
 
 export default {
   name: "SignIn",
@@ -36,6 +37,18 @@ export default {
       password: "",
     };
   },
+  mounted() {
+    api
+      .get("/signin")
+      .then((response) => {
+        this.configurations = response.data;
+        console.log("SignIn:", this.signin);
+      })
+      .catch((error) => {
+        console.error("Error fetching signin:", error);
+      });
+  },
+
   methods: {
     async signIn() {
       try {

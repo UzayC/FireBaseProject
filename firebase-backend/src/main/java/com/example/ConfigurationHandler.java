@@ -28,7 +28,7 @@ public class ConfigurationHandler implements HttpHandler {
             exchange.getResponseHeaders().add("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
             if ("OPTIONS".equals(exchange.getRequestMethod())) {
-                exchange.sendResponseHeaders(204, -1); // 204 No Content yanıtı
+                exchange.sendResponseHeaders(204, -1);
                 return;
             }
 

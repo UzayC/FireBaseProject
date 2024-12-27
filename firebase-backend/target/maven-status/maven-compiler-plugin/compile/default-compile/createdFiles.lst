@@ -1,0 +1,5 @@
+com\example\ConfigurationHandler.class
+com\example\AuthMiddleware.class
+com\example\SimpleApiServer.class
+com\example\FirebaseInitializer.class
+com\example\ServerInitializer.class

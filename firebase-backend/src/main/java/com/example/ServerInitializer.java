@@ -16,7 +16,7 @@ public class ServerInitializer {
 
             server.createContext("/configurations", new ConfigurationHandler());
 
-            server.setExecutor(null); // Varsayılan executor kullanılır
+            server.setExecutor(null);
             server.start();
 
             System.out.println("Server is running and ready to accept requests.");

@@ -3,10 +3,10 @@
 # Maven'i çalıştırılabilir hale getir
 chmod +x mvnw
 
-# JAVA_HOME değişkenini kontrol et
+# JAVA_HOME değişkenini kontrol et ve ayarla
 if [ -z "$JAVA_HOME" ]; then
-  echo "JAVA_HOME is not set. Please configure it in the Render environment."
-  exit 1
+    export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+    export PATH=$JAVA_HOME/bin:$PATH
 fi
 
 # Maven ile projeyi build et
